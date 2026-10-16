@@ -2,5 +2,7 @@
   "name": "matcha-holic",
   "description": "Matcha latte siap minum & momen tenang. Diracik dengan teliti untuk menemani jeda santai di Jabodetabek.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

@@ -6,52 +6,75 @@ Aplikasi web modern, responsif, dan elegan untuk brand matcha latte artisanal **
 
 ## 🚀 Cara Menjalankan di Lokal
 
-1. **Clone repository:**
-   ```bash
-   git clone <URL_REPOSITORY_ANDA>
-   cd <NAMA_FOLDER>
-   ```
-
-2. **Install dependensi:**
+1. **Install dependensi:**
    ```bash
    npm install
    ```
 
-3. **Jalankan development server:**
+2. **Jalankan development server:**
    ```bash
    npm run dev
    ```
    Buka `http://localhost:3000` di browser.
 
-4. **Build untuk produksi:**
+---
+
+## 🌐 Cara Deploy ke GitHub Pages (Deploy from a Branch)
+
+Proyek ini sudah dilengkapi dengan paket `gh-pages` dan script otomatis sehingga Anda bisa langsung men-deploy menggunakan opsi **Deploy from a branch**.
+
+### Cara 1: Menggunakan Perintah Otomatis `npm run deploy` (Sangat Disarankan)
+
+1. Pastikan repo Anda sudah terhubung ke GitHub:
    ```bash
-   npm run build
+   git add .
+   git commit -m "Update matcha-holic app"
+   git push origin main
    ```
-   Hasil build siap saji akan berada di dalam folder `dist/`.
+
+2. Jalankan perintah deploy ini di terminal:
+   ```bash
+   npm run deploy
+   ```
+   *Perintah ini akan otomatis me-run `npm run build` dan mem-push hasil folder `dist` ke branch `gh-pages` di GitHub Anda.*
+
+3. Buka repositori Anda di GitHub melalui browser:
+   - Klik tab **Settings**.
+   - Pilih menu **Pages** di sebelah kiri.
+   - Pada bagian **Build and deployment**:
+     - **Source**: Pilih **Deploy from a branch**.
+     - **Branch**: Pilih **`gh-pages`** dan folder **`/ (root)`**.
+   - Klik tombol **Save**.
+
+4. Tunggu beberapa detik, website Anda akan langsung aktif di URL:
+   ```text
+   https://<username-kamu>.github.io/<nama-repo-kamu>/
+   ```
 
 ---
 
-## 🌐 Cara Deploy ke GitHub Pages
+### Cara 2: Tetap Menggunakan Branch `main` (Folder `/docs`)
 
-Proyek ini sudah dikonfigurasi dengan:
-- `base: './'` pada `vite.config.ts` (mendukung path repositori seperti `username.github.io/repo-name/` maupun custom domain).
-- Impor aset gambar yang di-*bundle* otomatis ke folder `dist/assets/`.
-- Workflow GitHub Actions otomatis di `.github/workflows/deploy.yml`.
-- Fallback SPA `public/404.html`.
+Jika Anda tidak ingin membuat branch baru dan ingin hasil build berada di branch `main`:
 
-### Langkah-langkah di GitHub:
-
-1. **Push kode ke repository GitHub Anda** pada branch `main`.
-2. Buka repository Anda di GitHub, lalu klik tab **Settings**.
-3. Di panel sebelah kiri, pilih menu **Pages** (di bawah bagian *Code and automation*).
-4. Pada bagian **Build and deployment**:
-   - Ubah **Source** menjadi **GitHub Actions**.
-5. Tunggu proses workflow selesai (bisa dipantau di tab **Actions**).
-6. Website Anda akan langsung aktif di URL `https://<username>.github.io/<nama-repo>/`.
+1. Jalankan perintah build ke folder docs:
+   ```bash
+   npm run build:docs
+   ```
+2. Commit dan push folder `docs` ke GitHub:
+   ```bash
+   git add docs
+   git commit -m "Build website for GitHub Pages"
+   git push origin main
+   ```
+3. Di GitHub **Settings > Pages**:
+   - **Source**: **Deploy from a branch**.
+   - **Branch**: Pilih **`main`** dan pilih folder **`/docs`**.
+   - Klik **Save**.
 
 ---
 
-## ✨ Fitur Unggulan
+## ✨ Fitur Aplikasi
 
 - **Desain Responsif Penuh**: Adaptif di smartphone, tablet, dan monitor desktop (12-column grid layout & sticky sidebar).
 - **Simulasi Pesan WhatsApp & Waiting List**: Konfigurasi tingkat kemanisan (Normal / Less / Zero), pilihan susu (Fresh Milk / Oat Milk), jumlah botol, dan generator pesan WhatsApp siap kirim.

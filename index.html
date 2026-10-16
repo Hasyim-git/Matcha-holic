@@ -12,6 +12,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      // Automatic redirect to compiled /docs if user deployed repo root to GitHub Pages
+      if (window.location.hostname.endsWith('github.io') && !window.location.pathname.includes('/docs')) {
+        var base = window.location.pathname.replace(/\/+$/, '');
+        window.location.replace(base + '/docs/');
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
