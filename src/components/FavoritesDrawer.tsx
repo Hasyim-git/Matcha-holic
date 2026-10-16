@@ -1,5 +1,6 @@
 import React from 'react';
 import { X, Heart, MessageCircle, ArrowRight } from 'lucide-react';
+import { productBottleImage } from '../assets/images';
 
 interface FavoritesDrawerProps {
   isOpen: boolean;
@@ -44,7 +45,7 @@ export const FavoritesDrawer: React.FC<FavoritesDrawerProps> = ({
             <div className="p-4 rounded-xl border border-[#DDE0E3] bg-[#F3F5F6]/50 space-y-3">
               <div className="flex items-center gap-3">
                 <img
-                  src="/src/assets/images/product_matcha_bottle_1792122409004.jpg"
+                  src={productBottleImage}
                   alt="Matcha Latte Original"
                   className="w-16 h-16 rounded-lg object-cover border border-[#DDE0E3]"
                 />

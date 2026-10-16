@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Leaf, Milk, Sparkles, CheckCircle2, ChevronRight } from 'lucide-react';
 import { INGREDIENTS_DATA } from '../data/matchaData';
 import { IngredientDetail } from '../types/matcha';
+import { matchaPowderImage } from '../assets/images';
 
 export const IngredientsSection: React.FC = () => {
   const [activeIngredient, setActiveIngredient] = useState<IngredientDetail>(INGREDIENTS_DATA[0]);
@@ -76,7 +77,7 @@ export const IngredientsSection: React.FC = () => {
       <div className="bg-[#EEF4EE] rounded-2xl p-5 sm:p-6 border border-[#DDE0E3] grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
         <div className="md:col-span-4 relative aspect-4/3 rounded-xl overflow-hidden border border-[#DDE0E3]">
           <img
-            src="/src/assets/images/matcha_powder_macro_1792122408346.jpg"
+            src={matchaPowderImage}
             alt="Tekstur bubuk matcha murni dalam scoop bambu"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowDown, Sparkles, CupSoda } from 'lucide-react';
+import { heroMatchaImage } from '../assets/images';
 
 interface HeroSectionProps {
   onExploreProduct: () => void;
@@ -12,7 +13,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreProduct, onOp
       {/* Background Photography with measured scrim */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/src/assets/images/hero_matcha_latte_1792122408014.jpg"
+          src={heroMatchaImage}
           alt="Proses mengocok matcha dalam mangkuk chawan dengan chasen bambu"
           className="w-full h-full object-cover object-center transform scale-102 hover:scale-105 transition-transform duration-1000 ease-out"
           referrerPolicy="no-referrer"

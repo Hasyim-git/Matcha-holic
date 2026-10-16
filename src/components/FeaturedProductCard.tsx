@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Heart, MessageCircle, Clock, Milk, Snowflake, Sparkles, Check, Info } from 'lucide-react';
 import { SENSORY_PROFILE } from '../data/matchaData';
+import { productBottleImage } from '../assets/images';
 
 interface FeaturedProductCardProps {
   onOpenPreorder: () => void;
@@ -36,7 +37,7 @@ export const FeaturedProductCard: React.FC<FeaturedProductCardProps> = ({
           <div className="md:col-span-5 flex flex-col items-center">
             <div className="relative w-full aspect-4/3 md:aspect-square bg-[#F3F5F6] rounded-xl overflow-hidden border border-[#DDE0E3] group">
               <img
-                src="/src/assets/images/product_matcha_bottle_1792122409004.jpg"
+                src={productBottleImage}
                 alt="Matcha Latte Original dalam botol kaca dingin segar"
                 className="w-full h-full object-cover object-center group-hover:scale-104 transition-transform duration-500"
                 referrerPolicy="no-referrer"
